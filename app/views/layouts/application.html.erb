@@ -10,13 +10,20 @@
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+
   </head>
 
   <body>
 
-    <h1>test</h1>
+    <nav class="row">
+      <div class="twelve columns">...</div>
+    </nav>
 
     <%= yield %>
+
+    <footer class="row">
+
+    </footer>
 
   </body>
 </html>
