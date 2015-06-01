@@ -10,13 +10,33 @@
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+
   </head>
 
   <body>
 
-    <h1>test</h1>
+    <div class="row main-nav">
+      <div class="large-1 columns">
+        <div class="logo"><%= image_tag("logo.png") %></div>
+      </div>
+      <div class="large-11 columns">
+        <nav>
+          <ul>
+            <li><a href="/" class="active"><span>Home</span></a></li>
+            <li><a href="/users/1"><span>Who Am I?</span></a></li>
+            <li><a href="#"><span>Characters</span></a></li>
+            <li><a href="#"><span>Login</span></a></li>
+          </ul>
+        </nav>
+
+      </div>
+    </div>
 
     <%= yield %>
+
+    <footer class="row">
+
+    </footer>
 
   </body>
 </html>

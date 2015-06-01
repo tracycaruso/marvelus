@@ -1,0 +1,77 @@
+<style media="screen">
+/* entire container, keeps perspective */
+.flip-container {
+perspective: 1000;
+}
+/* flip the pane when hovered */
+.flip-container:hover .flipper, .flip-container.hover .flipper {
+  transform: rotateY(180deg);
+}
+
+
+
+/* flip speed goes here */
+.flipper {
+transition: 0.9s;
+transform-style: preserve-3d;
+
+position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+backface-visibility: hidden;
+
+position: absolute;
+top: 0;
+left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+z-index: 2;
+/* for firefox 31 */
+transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+transform: rotateY(180deg);
+}
+
+.description {
+  width: 300px;
+  height: 357px;
+  border-radius: 10px;
+  border: 3px solid #000;
+  margin: 10px 0px 0 28px;
+  padding:5px 15px;
+  background-color: #fff;
+}
+.flip-container, .front, .back {
+width: 320px;
+height: 480px;
+margin-left: 8px;
+margin-top: 10px;
+}
+
+
+</style>
+
+<div class="main row single">
+  <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+  	<div class="flipper">
+  		<div class="front">
+        <%= link_to image_tag("superwoman.png") %>
+        <h3>Wonder Woman</h3>
+  		</div>
+  		<div class="back">
+        <div class="description">
+          <h3>Wonder Woman</h3>
+          <p>The classic adventures of Spider-Man from the early days up until the 90s. Now, hes a premiere member of both the X-Men and the Avengers.</p>
+          <p>Marvels mighty mutants go worldwide and beyond in this series following Cyclops, Wolverine, Beast, Emma Frost and more in their astonishing adventures. Looking for the one superhero comic you just have to read.</p>
+        </div>
+  		</div>
+  	</div>
+  </div>
+</div>
