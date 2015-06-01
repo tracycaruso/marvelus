@@ -65,45 +65,45 @@ $include-html-global-classes: $include-html-classes;
 @import url(http://fonts.googleapis.com/css?family=Oswald:400,300);
 @font-face {
     font-family: 'sf_slapstick_comicbold';
-    src: url('sf_slapstick_comic_bold-webfont.eot');
-    src: url('sf_slapstick_comic_bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('sf_slapstick_comic_bold-webfont.woff2') format('woff2'),
-         url('sf_slapstick_comic_bold-webfont.woff') format('woff'),
-         url('sf_slapstick_comic_bold-webfont.ttf') format('truetype'),
-         url('sf_slapstick_comic_bold-webfont.svg#sf_slapstick_comicbold') format('svg');
+    src: font-url('sf_slapstick_comic_bold-webfont.eot');
+    src: font-url('sf_slapstick_comic_bold-webfont.eot?#iefix') format('embedded-opentype'),
+    font-url('sf_slapstick_comic_bold-webfont.woff2') format('woff2'),
+    font-url('sf_slapstick_comic_bold-webfont.woff') format('woff'),
+    font-url('sf_slapstick_comic_bold-webfont.ttf') format('truetype'),
+    font-url('sf_slapstick_comic_bold-webfont.svg#sf_slapstick_comicbold') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'sf_slapstick_comicregular';
-    src: url('sf_slapstick_comic-webfont.eot');
-    src: url('sf_slapstick_comic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('sf_slapstick_comic-webfont.woff2') format('woff2'),
-         url('sf_slapstick_comic-webfont.woff') format('woff'),
-         url('sf_slapstick_comic-webfont.ttf') format('truetype'),
-         url('sf_slapstick_comic-webfont.svg#sf_slapstick_comicregular') format('svg');
+    src: font-url('sf_slapstick_comic-webfont.eot');
+    src: font-url('sf_slapstick_comic-webfont.eot?#iefix') format('embedded-opentype'),
+    font-url('sf_slapstick_comic-webfont.woff2') format('woff2'),
+    font-url('sf_slapstick_comic-webfont.woff') format('woff'),
+    font-url('sf_slapstick_comic-webfont.ttf') format('truetype'),
+    font-url('sf_slapstick_comic-webfont.svg#sf_slapstick_comicregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'sf_comic_script_extendedRg';
-    src: url('sf_comic_script_extended-webfont.eot');
-    src: url('sf_comic_script_extended-webfont.eot?#iefix') format('embedded-opentype'),
-         url('sf_comic_script_extended-webfont.woff2') format('woff2'),
-         url('sf_comic_script_extended-webfont.woff') format('woff'),
-         url('sf_comic_script_extended-webfont.ttf') format('truetype'),
-         url('sf_comic_script_extended-webfont.svg#sf_comic_script_extendedRg') format('svg');
+    src: font-url('sf_comic_script_extended-webfont.eot');
+    src: font-url('sf_comic_script_extended-webfont.eot?#iefix') format('embedded-opentype'),
+    font-url('sf_comic_script_extended-webfont.woff2') format('woff2'),
+    font-url('sf_comic_script_extended-webfont.woff') format('woff'),
+    font-url('sf_comic_script_extended-webfont.ttf') format('truetype'),
+    font-url('sf_comic_script_extended-webfont.svg#sf_comic_script_extendedRg') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'code_boldregular';
-    src: url('code_bold-webfont.eot');
-    src: url('code_bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('code_bold-webfont.woff2') format('woff2'),
-         url('code_bold-webfont.woff') format('woff'),
-         url('code_bold-webfont.ttf') format('truetype'),
-         url('code_bold-webfont.svg#code_boldregular') format('svg');
+    src: font-url('code_bold-webfont.eot');
+    src: font-url('code_bold-webfont.eot?#iefix') format('embedded-opentype'),
+    font-url('code_bold-webfont.woff2') format('woff2'),
+    font-url('code_bold-webfont.woff') format('woff'),
+    font-url('code_bold-webfont.ttf') format('truetype'),
+    font-url('code_bold-webfont.svg#code_boldregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
