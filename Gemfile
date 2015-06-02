@@ -11,6 +11,8 @@ gem 'sdoc',         '0.4.0', group: :doc
 gem 'foundation-rails'
 gem 'faraday'
 gem 'hurley'
+gem 'omniauth-twitter'
+gem 'figaro'
 
 group :development, :test do
   gem 'byebug'

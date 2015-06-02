@@ -24,8 +24,15 @@
           <ul>
             <li><a href="/"><span>Home</span></a></li>
             <li><a href="/users/1"><span>Who Am I?</span></a></li>
+
             <li><a href="/characters"><span>Characters</span></a></li>
-            <li><a href="#"><span>Login with Twitter</span></a></li>
+            <% if current_user %>
+              <li><%= link_to "Logout", logout_path, method: :delete%></li>
+            <% else %>
+              <li><%= link_to "Login with Twitter", "/auth/twitter" %></li>
+            <% end %>
+
+
           </ul>
         </nav>
 
