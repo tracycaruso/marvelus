@@ -2,19 +2,19 @@ class ComicvineService
   attr_reader :connection
 
   def initialize
-    connection = Faraday.new(url: 'http://www.comicvine.com/api') do |faraday|
-      faraday.request  :url_encoded             # form-encode POST params
-      faraday.response :logger                  # log requests to STDOUT
-      faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
+    connection = Faraday.new(url: 'http://www.comicvine.com') do |faraday|
+      faraday.request  :url_encoded            
+      faraday.response :logger                  
+      faraday.adapter  Faraday.default_adapter  
+    end
   end
 
-  def characters(key)
-    parse(connection.get("/characters/api_key=#{key}")
+  def characters
+    #build database as users search for things
+    response = connection.get("api/characters/?api_key=#{ENV['COMIC_API_KEY']}&filter=name:Superman&format=json")
+    # connection.get('/characters/?api_key=675036cffc0144811da8a954e33a93b633386eec&filter=name:Superman&format=json'   , params)
+    response.body
   end
-end
-# params = { api_key: ENV['comic_vine_key'] }
-# conn.get('characters', params)
-
 
 
 end
