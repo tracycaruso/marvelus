@@ -1,22 +1,39 @@
 class ComicVineService
-  attr_reader :connection
+  attr_reader :client
 
   def initialize
-    @connection = Hurley::Client.new('http://www.comicvine.com')
+    @client = Hurley::Client.new('http://www.comicvine.com')
+    client.query['api_key']    =  ENV['COMIC_API_KEY']
+    client.query['format']     = 'json'  
   end
 
-  def character(search)
-    search = "Superman"
-    #build database as users search for things
-    response = parse(connection.get("api/character/?api_key=#{ENV['COMIC_API_KEY']}&limit=1&filter=name:#{search}&format=json"))
-    require 'pry';binding.pry
+  def all_characters
+    batch_size = 100
+    offset     = 0
+    characters = []
+
+    loop do
+      response = client.get("api/characters") do |request|
+        request.query[:limit]    = batch_size    #the limit is how many records to pull after the offset
+        request.query[:offset]   = offset  #offset is the position where you start counting
+      end
+
+      offset += batch_size  #increment the offset by 100 each iteration
+      response_data = parse(response)     #response_data is a hash
+      characters += response_data[:results] #response_data[:results] is an array of 100 hashes of data
+      if offset >= 500
+      # if offset >= response_data[:number_of_total_results]
+        break
+      end
+    end
+    characters 
   end
 
 
   private
 
   def parse(response)
-    JSON.parse(response, symbolize_names: true)
+    JSON.parse(response.body, symbolize_names: true)
   end
 
 end
