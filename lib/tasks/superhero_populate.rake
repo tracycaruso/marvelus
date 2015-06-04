@@ -1,25 +1,6 @@
-namespace :superhero_populate do
-
-  desc "Access superheroes"
-  task :access_superheroes => :environment do
-    print "How many fake people do you want?"
-    num_people = $stdin.gets.to_i
-    num_people.times do
-      Person.create(:first_name => Faker::Name.first_name,
-                    :last_name => Faker::Name.last_name)
-    end
-    print "#{num_people} created.n"
-  end
-
-  desc "Analyze superheroes"
-  task :analyze_superheroes => :environment do
-    print "How many fake people do you want?"
-    num_people = $stdin.gets.to_i
-    num_people.times do
-      Person.create(:first_name => Faker::Name.first_name,
-                    :last_name => Faker::Name.last_name)
-    end
-    print "#{num_people} created.n"
-  end
-
+desc "This task is called by the Heroku scheduler add-on"
+task :create_superheros => :environment do
+  puts "Creating superheros..."
+  SuperherosController.new.create_superheros
+  puts "Truth justice and the American way!!!"
 end
