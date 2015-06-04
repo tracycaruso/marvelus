@@ -13,6 +13,7 @@ gem 'hurley'
 gem 'omniauth-twitter'
 gem 'figaro'
 gem 'twitter'
+gem 'alchemy-api-rb', :require => 'alchemy_api'
 
 group :development, :test do
   gem 'byebug'
