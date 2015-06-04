@@ -10,6 +10,16 @@ SUPER_IDS = ['1699','1440','2114','1441','1295','1420','1445','1457','1462','132
 '1489','1332','1818','1254','1342','2475','1489','1332','1818','1254',
 '1313','4885','1332','10448','2233','2149']
 
+  def index
+    # @superheros = Superhero.take(9)
+    @superheros = Superhero.all.sample(9)
+  end
+
+  def show
+    @superhero = Superhero.find(params[:id])
+  end
+
+
 
   def create_superheros
     SUPER_IDS.each do |id|

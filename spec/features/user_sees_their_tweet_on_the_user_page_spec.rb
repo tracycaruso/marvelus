@@ -5,10 +5,15 @@ RSpec.describe "logged in user" do
     OmniAuth.config.mock_auth[:twitter] = nil
   end
 
-  xit "can log in and see one tweet" do 
+  def user_logs_in
     visit '/'
     mock_omniauth_user
-    click_link "Who Am I"
-    expect(page).to have_content("Holla! I'm awesome")
+    click_link "Login with Twitter"
+  end
+
+  it "can see a tweet on user page" do 
+    user_logs_in
+    
+    expect(page).to have_content("I tweeted this!")
   end
 end

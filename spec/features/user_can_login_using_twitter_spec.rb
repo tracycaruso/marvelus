@@ -9,7 +9,7 @@ RSpec.describe "logged in user" do
     visit '/'
     mock_omniauth_user
     click_link "Login with Twitter"
-    expect(page).to have_content("Welcome #{user.nickname}!")
+    expect(page).to have_content("twitter_mock_user")
   end
 end
 
