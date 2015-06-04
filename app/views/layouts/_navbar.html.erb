@@ -1,0 +1,14 @@
+<nav>
+  <ul>
+    <% if current_user %>
+    <%= render 'layouts/nav_bar_logged_in_user' %>
+    <% else %>
+    <li><a href="/"><span>Home</span></a></li>
+    <li><a href="/users"><span>Who Am I?</span></a></li>
+    <li><a href="/superheros"><span>Superheros</span></a></li>
+      <li><%= link_to "Login with Twitter", "/auth/twitter" %></li>
+    <% end %>
+
+
+  </ul>
+</nav>
