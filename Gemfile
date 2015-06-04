@@ -12,6 +12,7 @@ gem 'foundation-rails'
 gem 'hurley'
 gem 'omniauth-twitter'
 gem 'figaro'
+gem 'rails-html-sanitizer'
 
 group :development, :test do
   gem 'byebug'

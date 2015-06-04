@@ -235,6 +235,7 @@ DEPENDENCIES
   pg (= 0.17.1)
   pry-rails
   rails
+  rails-html-sanitizer
   rails_12factor (= 0.0.2)
   rspec-rails
   sass-rails (= 5.0.2)
