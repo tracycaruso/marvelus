@@ -9,7 +9,6 @@ gem 'turbolinks',   '2.3.0'
 gem 'jbuilder',     '2.2.3'
 gem 'sdoc',         '0.4.0', group: :doc
 gem 'foundation-rails'
-gem 'faraday'
 gem 'hurley'
 gem 'omniauth-twitter'
 gem 'figaro'
@@ -20,10 +19,12 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring',      '1.1.3'
   gem 'dotenv-rails'
+  gem 'vcr'
 end
 
 group :test do
   gem 'capybara'
+  gem 'webmock'
   gem 'launchy'
   gem 'simplecov'
   gem 'database_cleaner'

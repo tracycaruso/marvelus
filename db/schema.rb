@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150601232348) do
+ActiveRecord::Schema.define(version: 20150603221315) do
+
+  create_table "superheros", force: :cascade do |t|
+    t.string "deck"
+    t.string "descripton"
+    t.string "gender"
+    t.string "name"
+    t.string "real_name"
+    t.string "image"
+    t.string "birthday"
+    t.string "last_name"
+    t.string "publisher"
+    t.string "comic_vine_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "nickname"
@@ -23,8 +36,5 @@ ActiveRecord::Schema.define(version: 20150601232348) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-ActiveRecord::Schema.define(version: 0) do
-
 
 end
