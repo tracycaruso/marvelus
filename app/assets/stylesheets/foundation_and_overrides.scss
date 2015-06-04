@@ -114,10 +114,20 @@ body {
 }
 
 .single{
-  background: #000 asset-url("temp-background.png") no-repeat;
+  background: #000 asset-url("temp-background_no_text.png") no-repeat;
   background-size: cover;
   min-height: 1475px;
 
+}
+
+h6{
+  font-family: 'code_boldregular';
+  font-size:18px;
+  margin-right:10px;
+}
+
+.deck{
+  font-size:18px;
 }
 
 img {
@@ -185,6 +195,7 @@ h3 {
 }
 
 .superheros .large-4{
+  margin-top:30px;
   padding:0 40px;
 }
 
@@ -214,7 +225,8 @@ nav ul {
   text-align: right;
   font-family: 'Oswald', sans-serif;
   text-transform: uppercase;
-  font-size: 1.4rem;
+  font-size: 1.1 em;
+  color: yellow;
 }
 nav li {
   display: inline-block;
@@ -306,4 +318,27 @@ width: 320px;
 height: 480px;
 margin-left: 8px;
 margin-top: 10px;
+}
+
+.user-container {
+  position: relative;
+}
+
+.tweet {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.superheros2 .img-container{
+  height:350px;
+  overflow:hidden;
+  border-radius:10px;
+  border:5px solid #000;
+}
+
+.super-img{
+  border-radius:10px;
+  border:5px solid #000;
+  
 }

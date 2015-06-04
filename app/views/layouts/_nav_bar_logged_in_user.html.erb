@@ -1,0 +1,7 @@
+    
+    <li id="yellow", class="pull-left"> Welcome <%= current_user.nickname %> </li>
+    
+    <li><a href="/"><span>Home</span></a></li>
+    <li><a href="/users"><span>Who Am I?</span></a></li>
+    <li><a href="/superheros"><span>Superheros</span></a></li>
+    <li><%= link_to "Logout", logout_path, method: :delete%></li>

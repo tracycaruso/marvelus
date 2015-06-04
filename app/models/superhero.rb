@@ -3,4 +3,6 @@ class Superhero < ActiveRecord::Base
       @service ||= ComicVineService.new
   end
 
+
+
 end
