@@ -12,9 +12,12 @@ gem 'foundation-rails'
 gem 'hurley'
 gem 'omniauth-twitter'
 gem 'figaro'
+gem 'twitter'
+gem 'alchemy-api-rb', :require => 'alchemy_api'
 
 group :development, :test do
   gem 'byebug'
+  gem 'pry'
   gem 'sqlite3'
   gem 'web-console', '~> 2.0'
   gem 'spring',      '1.1.3'
