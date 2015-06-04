@@ -11,19 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150603221315) do
+ActiveRecord::Schema.define(version: 20150604200514) do
 
   create_table "superheros", force: :cascade do |t|
-    t.string "deck"
-    t.string "descripton"
-    t.string "gender"
-    t.string "name"
-    t.string "real_name"
-    t.string "image"
-    t.string "birthday"
-    t.string "last_name"
-    t.string "publisher"
-    t.string "comic_vine_id"
+    t.string  "deck"
+    t.string  "descripton"
+    t.string  "gender"
+    t.string  "name"
+    t.string  "real_name"
+    t.string  "image"
+    t.string  "birthday"
+    t.string  "last_name"
+    t.string  "publisher"
+    t.string  "comic_vine_id"
+    t.integer "sentiment_score"
   end
 
   create_table "users", force: :cascade do |t|

@@ -41,8 +41,9 @@ class Superhero < ActiveRecord::Base
   end
 
   def aggregate_sentiment_score
-    score = (calculate_sentiment_vivekn[:confidence].to_f / 100.0) + (calculate_sentiment_alchemy["score"].to_f * 100.0)
-    Superhero.superheros_scores[self.id] = score
+    score = ((calculate_sentiment_vivekn[:confidence].to_f / 100.0) + (calculate_sentiment_alchemy["score"].to_f * 100.0)).to_i
+    self.sentiment_score = score
+    self.save
   end
 
 end
