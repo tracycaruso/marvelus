@@ -23,6 +23,7 @@ group :development, :test do
   gem 'spring',      '1.1.3'
   gem 'dotenv-rails'
   gem 'vcr'
+  gem 'webmock'
 end
 
 group :test do
