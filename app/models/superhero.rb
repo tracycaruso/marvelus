@@ -8,6 +8,8 @@ class Superhero < ActiveRecord::Base
   '1698','1464','1696','1332','1697','2047','1446','1342','2475',
   '1489','1332','1818','1254']
 
+  scope :ordered_score, -> { Superhero.order(:sentiment_score) }
+
   def self.service
       @service ||= ComicVineService.new
   end
