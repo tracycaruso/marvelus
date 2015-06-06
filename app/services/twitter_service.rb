@@ -13,7 +13,7 @@ class TwitterService
   def collect_tweets(user)
     twitter.user_timeline(user).take(10).collect do |tweet|
       "#{tweet.text}"
-    end
+    end.join(". ")
   end
 
 end

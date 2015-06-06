@@ -16,13 +16,6 @@ class Superhero < ActiveRecord::Base
     @superheros_scores ||= Hash.new
   end
 
-  def self.create_superheros
-    SUPER_IDS.each do |id|
-      access(id)
-    end
-  end
-
-
   def self.access(id)
     params = SuperheroParameterParser.parse(Superhero.service.character(id))
     Superhero.create(params)

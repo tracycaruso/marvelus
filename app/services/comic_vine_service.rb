@@ -3,15 +3,11 @@ class ComicVineService
 
   def initialize
     @connection = Hurley::Client.new('http://www.comicvine.com')
-
   end
-
 
   def character(id)
    params = parse(connection.get("api/characters/?api_key=#{ENV['comic_api_key']}&filter=id:#{id}&format=json").body)[:results].first
- end
-
-
+  end
 
   private
 
