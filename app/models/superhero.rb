@@ -10,6 +10,10 @@ class Superhero < ActiveRecord::Base
 
   scope :ordered_score, -> { Superhero.order(:sentiment_score) }
 
+  def self.scores
+    ordered_score.map {|hero| hero.sentiment_score}
+  end
+
   def self.service
       @service ||= ComicVineService.new
   end
