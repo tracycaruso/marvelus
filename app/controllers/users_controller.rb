@@ -3,8 +3,4 @@ class UsersController < ApplicationController
 
   end
 
-  #
-  # $twitter.user_timeline("tweetsbytan").take(3).collect do |tweet|
-  #   "#{tweet.text}"
-  # end
 end
