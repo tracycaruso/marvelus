@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150604200514) do
+ActiveRecord::Schema.define(version: 20150607173249) do
 
   create_table "superheros", force: :cascade do |t|
     t.string  "deck"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20150604200514) do
     t.string  "last_name"
     t.string  "publisher"
     t.string  "comic_vine_id"
-    t.integer "sentiment_score"
+    t.integer "sentiment_score", default: 0
   end
 
   create_table "users", force: :cascade do |t|

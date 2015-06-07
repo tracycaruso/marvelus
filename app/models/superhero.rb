@@ -10,6 +10,12 @@ class Superhero < ActiveRecord::Base
 
   scope :ordered_score, -> { Superhero.order(:sentiment_score) }
 
+  def self.create_superheros
+    SUPER_IDS.each do |id|
+      access(id)
+    end
+  end
+
   def self.scores
     ordered_score.map {|hero| hero.sentiment_score}
   end
@@ -32,11 +38,31 @@ class Superhero < ActiveRecord::Base
   end
 
   def calculate_sentiment_vivekn
-    sentiment_vivekn_service.sentiment("#{self.descripton}")
+    counter = 0
+    begin
+      counter += 1
+      sentiment_vivekn_service.sentiment("#{self.descripton}")
+    rescue Hurley::Timeout => error
+      if counter >= 3
+        { confidence: 0 }
+      else
+        retry 
+      end
+    end
   end
 
   def calculate_sentiment_alchemy
-    AlchemyAPI.search(:sentiment_analysis, text: "#{self.deck} + #{self.descripton}")
+    counter = 0
+    begin
+      counter += 1
+      AlchemyAPI.search(:sentiment_analysis, text: "#{self.deck} + #{self.descripton}")
+    rescue Faraday::TimeoutError => error
+      if counter >= 3
+        { "score" => 0 }
+      else
+        retry
+      end
+    end
   end
 
   def aggregate_sentiment_score
@@ -44,5 +70,4 @@ class Superhero < ActiveRecord::Base
     self.sentiment_score = score
     self.save
   end
-
 end
