@@ -11,9 +11,14 @@ class TwitterService
   end
 
   def collect_tweets(user)
-    twitter.user_timeline(user).take(10).collect do |tweet|
+    twitter.user_timeline(user, count: 10).collect do |tweet|
       "#{tweet.text}"
     end.join(". ")
   end
 
+  def most_recent_tweet(user)
+    twitter.user_timeline(user, count: 1).first.text
+  end
 end
+
+  

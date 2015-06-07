@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
     @user = User.find_or_create_from_auth(request.env['omniauth.auth'])
     if @user
       session[:user_id] = @user.id
+      @user.aggregate_sentiment_score
       redirect_to users_path
     else
       redirect_to root_path

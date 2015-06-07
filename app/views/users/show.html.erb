@@ -3,12 +3,12 @@
   <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
   	<div class="flipper">
   		<div class="front">
-        <%= link_to image_tag("superwoman.png") %>
-        <h3>Wonder Woman</h3>
-  		</div>
-  		<div class="back">
+        <%= link_to image_tag(superhero.image) %>
+          <h3><%= superhero.name %>/h3>
+      </div>
+      <div class="back">
         <div class="description">
-          <h3>Wonder Woman</h3>
+          <h3><%= superhero.name %>/h3>
           <p>The classic adventures of Spider-Man from the early days up until the 90s. Now, hes a premiere member of both the X-Men and the Avengers.</p>
           <p>Marvels mighty mutants go worldwide and beyond in this series following Cyclops, Wolverine, Beast, Emma Frost and more in their astonishing adventures. Looking for the one superhero comic you just have to read.</p>
         </div>

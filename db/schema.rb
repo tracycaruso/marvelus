@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150607173249) do
+ActiveRecord::Schema.define(version: 20150607214046) do
 
   create_table "superheros", force: :cascade do |t|
     t.string  "deck"
@@ -34,8 +34,9 @@ ActiveRecord::Schema.define(version: 20150607173249) do
     t.string   "token"
     t.string   "uid"
     t.string   "image_url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.integer  "sentiment_score", default: 0
   end
 
 end
