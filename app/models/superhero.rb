@@ -16,16 +16,8 @@ class Superhero < ActiveRecord::Base
     end
   end
 
-  def self.scores
-    ordered_score.map {|hero| hero.sentiment_score}
-  end
-
   def self.service
       @service ||= ComicVineService.new
-  end
-
-  def self.superheros_scores
-    @superheros_scores ||= Hash.new
   end
 
   def self.access(id)
