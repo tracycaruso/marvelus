@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :tweets
 
   def self.sentiment_vivekn_service
     @sentiment_vivekn_service ||= SentimentViveknService.new
@@ -23,16 +24,42 @@ class User < ActiveRecord::Base
     User.twitter_service.collect_tweets(self.nickname)
   end
 
+  def last_tweet
+    User.twitter_service.most_recent_tweet(self.nickname)
+  end
+
   def calculate_sentiment_vivekn
-    User.sentiment_vivekn_service.sentiment(tweet_text)
+    counter = 0
+    begin
+      counter += 1
+      User.sentiment_vivekn_service.sentiment(tweet_text)
+    rescue Hurley::Timeout => error
+      if counter >= 3
+        { confidence: 0 }
+      else
+        retry 
+      end
+    end
   end
 
   def calculate_sentiment_alchemy
-    AlchemyAPI.search(:sentiment_analysis, text: tweet_text)
+    counter = 0
+    begin
+      counter += 1
+      AlchemyAPI.search(:sentiment_analysis, text: tweet_text)
+    rescue Faraday::TimeoutError => error
+      if counter >= 3
+        { "score" => 0 }
+      else
+        retry
+      end
+    end
   end
 
   def aggregate_sentiment_score
-    ((calculate_sentiment_vivekn[:confidence].to_f / 100.0) + (calculate_sentiment_alchemy["score"].to_f * 100.0)).to_i
+    score = ((calculate_sentiment_vivekn[:confidence].to_f / 100.0) + (calculate_sentiment_alchemy["score"].to_f * 100.0)).to_i
+    self.sentiment_score = score
+    self.save
   end
 
 end
