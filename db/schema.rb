@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150607214046) do
+ActiveRecord::Schema.define(version: 20150608142504) do
 
   create_table "superheros", force: :cascade do |t|
     t.string  "deck"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20150607214046) do
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
     t.integer  "sentiment_score", default: 0
+    t.string   "oauth_secret"
   end
 
 end

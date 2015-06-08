@@ -19,4 +19,15 @@ class TwitterService
   def most_recent_tweet(user)
     twitter.user_timeline(user, count: 1).first.text
   end
+
+  def self.tweet(user, superhero)
+    client = Twitter::REST::Client.new do |config|
+        config.consumer_key        = ENV['client_id']
+        config.consumer_secret     = ENV['client_secret']
+        config.access_token        = user.token
+        config.access_token_secret = user.oauth_secret
+    end
+    client.update("Your Superhero match is #{superhero.name}")
+  end
+
 end
