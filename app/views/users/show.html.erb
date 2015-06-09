@@ -3,15 +3,17 @@
   <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
   	<div class="flipper">
   		<div class="front">
-        <%= link_to image_tag(@superhero.image) %>
-          <h3><%= @superhero.name %></h3>
+        <div class="img-container">
+            <%= link_to image_tag(@superhero.image) %>
+            <h3><%= @superhero.name %></h3>
+        </div>
       </div>
       <div class="back">
         <div class="description">
           <h3><%= @superhero.name %></h3>
-          <p><%= @superhero.deck %></p>
+          <p><%= @superhero.deck %></p><br>
+          </div>
         </div>
-  		</div>
   	</div>
   </div>
 
