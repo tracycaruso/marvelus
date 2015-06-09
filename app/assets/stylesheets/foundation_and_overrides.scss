@@ -313,11 +313,12 @@ transform: rotateY(180deg);
   padding:5px 15px;
   background-color: #fff;
 }
+
 .flip-container, .front, .back {
-width: 320px;
-height: 480px;
-margin-left: 8px;
-margin-top: 10px;
+  width: 320px;
+  height: 480px;
+  margin-left: 8px;
+  margin-top: 10px;
 }
 
 .user-container {
@@ -335,6 +336,10 @@ margin-top: 10px;
   overflow:hidden;
   border-radius:10px;
   border:5px solid #000;
+
+  h3 {
+    font-size: 1.4rem;
+  }
 }
 
 .super-img{
@@ -352,8 +357,8 @@ margin-top: 10px;
 .super-comment {
 
   position:absolute;
-  top: 80px;
-  left: 400px;
+  top: 70px;
+  left: 390px;
   width: 260px;
   transform: rotate(15deg);
 
@@ -363,24 +368,49 @@ margin-top: 10px;
 }
 
 .super-tweet {
-
   position:absolute;
-  top: 450px;
+  top: 425px;
   left: 400px;
   width: 720px;
 
   h3 {
     font-size: 2rem;
+    line-height: 1.4rem;
+  }
+
+  .closest {
+    h3 {
+     font-size: 1.3rem;
+   }
   }
 }
 
 .custom-thumbnail-class {
   @include thumb(
-    // Width of border around thumbnail
     $border-width: 2px,
-    // Box shadow to apply to thumbnail
     $box-shadow: 0 0 0 1px rgba(#000,.2),
-    // Box shadow to apply on hover
     $box-shadow-hover: 0 0 6px 1px rgba(#ccc,0.5)
-  );
+  )
 }
+
+.closest .img-container4 {
+  height:200px;
+  overflow:hidden;
+  border-radius:10px;
+  border:5px solid #000;
+  margin-top: 10px;
+}
+
+.superheros2 h3 {
+  font-size: 1.7rem;
+  line-height: 1.4rem;
+}
+
+#close {
+  h3 {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+  }
+}
+
+
