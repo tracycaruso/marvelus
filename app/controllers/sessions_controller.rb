@@ -13,7 +13,5 @@ class SessionsController < ApplicationController
   def destroy
     session.clear
     redirect_to root_path
-    #delete users tweets
-      #user.tweets.destroy
   end
 end

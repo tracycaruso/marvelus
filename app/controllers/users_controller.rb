@@ -1,8 +1,11 @@
 class UsersController < ApplicationController
 
   def show
-    superhero_matcher = SuperheroMatcher.new(current_user)
-    @superhero = superhero_matcher.match
+  end
+
+  def tweet
+    TwitterService.tweet(current_user, superhero_match)
+    redirect_to superhero_path(superhero_match)
   end
 
 end
