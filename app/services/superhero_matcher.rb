@@ -6,8 +6,15 @@ class SuperheroMatcher
   end
 
   def match
-    Superhero.all.min_by {|hero| (hero.sentiment_score -  score).abs }
+    # Superhero.all.min_by {|hero| (hero.sentiment_score -  score).abs }
+    Superhero.order("abs(superheros.sentiment_score - #{score})").first
   end
+
+  def closest_matches
+    Superhero.order("abs(superheros.sentiment_score - #{score})")[-3..-1]
+  end
+
+
 
 end
 

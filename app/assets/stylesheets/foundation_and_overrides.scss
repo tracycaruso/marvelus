@@ -352,7 +352,7 @@ margin-top: 10px;
 .super-comment {
 
   position:absolute;
-  top: 60px;
+  top: 80px;
   left: 400px;
   width: 260px;
   transform: rotate(15deg);
@@ -360,4 +360,27 @@ margin-top: 10px;
   h3 {
     font-size: 1.4rem;
   }
+}
+
+.super-tweet {
+
+  position:absolute;
+  top: 450px;
+  left: 400px;
+  width: 720px;
+
+  h3 {
+    font-size: 2rem;
+  }
+}
+
+.custom-thumbnail-class {
+  @include thumb(
+    // Width of border around thumbnail
+    $border-width: 2px,
+    // Box shadow to apply to thumbnail
+    $box-shadow: 0 0 0 1px rgba(#000,.2),
+    // Box shadow to apply on hover
+    $box-shadow-hover: 0 0 6px 1px rgba(#ccc,0.5)
+  );
 }

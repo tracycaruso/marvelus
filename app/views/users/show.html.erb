@@ -4,24 +4,34 @@
   	<div class="flipper">
   		<div class="front superheros2">
         <div class="img-container">
-          <%= link_to image_tag(superhero_match.image) %>
+          <%= link_to image_tag(@superhero.image) %>
         </div>
-          <h3><%= superhero_match.name %></h3>
+          <h3><%= @superhero.name %></h3>
       </div>
 
       <div class="back">
         <div class="description">
-          <h3><%= superhero_match.name %></h3>
-          <p><%= superhero_match.deck %></p>
+          <h3><%= @superhero.name %></h3>
+          <p><%= @superhero.deck %></p>
           <h3><%= link_to image_tag("tweet_button.png", :class => 'tweet_icon'), tweet_path, method: :post %></h3>
         </div>
       </div>
-
   	</div>
   </div>
 
   <div class="super-comment">
-    <h3><%= truncate("Hey #{current_user.nickname}, Our spidey senses tell us that you are #{superhero_match.name}!", length: 110) %> </h3>
+    <h3><%= truncate("Hey #{current_user.nickname}, Our spidey senses tell us that you are #{@superhero.name}!", length: 110) %> </h3>
+  </div>
 
+  <div class="super-tweet">
+    <h3> Your other closest super matches are </h3>
+    <% @closest_matches.each do |hero| %>
+      <div class="large-4 columns superheros2">
+        <div class="img-container">
+          <%= image_tag hero.image, class: "custom-thumbnail-class" %>
+        </div>
+        <h3> <%= hero.name %> </h3>
+      </div>
+    <% end %>
   </div>
 </div>
