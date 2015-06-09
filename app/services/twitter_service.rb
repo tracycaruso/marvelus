@@ -27,7 +27,7 @@ class TwitterService
         config.access_token        = user.token
         config.access_token_secret = user.oauth_secret
     end
-    client.update("Your Superhero match is #{superhero.name}")
+    client.update("Your Marvelus Superhero match is #{superhero.name}")
   end
 
 end
