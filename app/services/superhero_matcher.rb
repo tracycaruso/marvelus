@@ -11,7 +11,7 @@ class SuperheroMatcher
   end
 
   def closest_matches
-    Superhero.order("abs(superheros.sentiment_score - #{score})")[-3..-1]
+    Superhero.order("abs(superheros.sentiment_score - #{score})").limit(4)[-3..-1]
   end
 
 
