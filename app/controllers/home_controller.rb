@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
 
   def index
-    @superheros = Superhero.take(9)
+    @superheros = Superhero.hero_view(9)
   end
 end
