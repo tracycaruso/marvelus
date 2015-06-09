@@ -6,6 +6,6 @@
   <br/>
     <h1> <%= @superhero.name %> </h1>
     <p class="deck"> <%= @superhero.deck %> </p>
-    <h6>Birthday : <%= @superhero.birthday %> </h6>
-    <h6>Publisher : <%= @superhero.publisher %></h6>
+    <%= display_present_attribute("Birthday", @superhero.birthday) %>
+    <%= display_present_attribute("Publisher", @superhero.publisher) %>
   </div>

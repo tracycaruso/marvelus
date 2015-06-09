@@ -1,7 +1,7 @@
 class SuperherosController < ApplicationController
 
   def index
-    @superheros = Superhero.all.sample(9)
+    @superheros = Superhero.order("RANDOM()")
   end
 
   def show

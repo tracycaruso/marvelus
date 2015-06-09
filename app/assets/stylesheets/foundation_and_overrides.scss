@@ -313,11 +313,12 @@ transform: rotateY(180deg);
   padding:5px 15px;
   background-color: #fff;
 }
+
 .flip-container, .front, .back {
-width: 320px;
-height: 480px;
-margin-left: 8px;
-margin-top: 10px;
+  width: 320px;
+  height: 480px;
+  margin-left: 8px;
+  margin-top: 10px;
 }
 
 .user-container {
@@ -335,12 +336,15 @@ margin-top: 10px;
   overflow:hidden;
   border-radius:10px;
   border:5px solid #000;
+
+  h3 {
+    font-size: 1.4rem;
+  }
 }
 
 .super-img{
   border-radius:10px;
   border:5px solid #000;
-
 }
 
 .tweet_icon {
@@ -349,3 +353,64 @@ margin-top: 10px;
   margin-left:-10px;
   border:5px solid #000;
 }
+
+.super-comment {
+
+  position:absolute;
+  top: 70px;
+  left: 390px;
+  width: 260px;
+  transform: rotate(15deg);
+
+  h3 {
+    font-size: 1.4rem;
+  }
+}
+
+.super-tweet {
+  position:absolute;
+  top: 425px;
+  left: 400px;
+  width: 720px;
+
+  h3 {
+    font-size: 2rem;
+    line-height: 1.4rem;
+  }
+
+  .closest {
+    h3 {
+     font-size: 1.3rem;
+   }
+  }
+}
+
+.custom-thumbnail-class {
+  @include thumb(
+    $border-width: 2px,
+    $box-shadow: 0 0 0 1px rgba(#000,.2),
+    $box-shadow-hover: 0 0 6px 1px rgba(#ccc,0.5)
+  )
+}
+
+.closest .img-container4 {
+  height:200px;
+  overflow:hidden;
+  border-radius:10px;
+  border:5px solid #000;
+  margin-top: 10px;
+}
+
+.superheros2 h3 {
+  font-size: 1.7rem;
+  line-height: 1.4rem;
+}
+
+#close {
+  h3 {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+  }
+}
+
+
