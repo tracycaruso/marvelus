@@ -27,7 +27,7 @@ class TwitterService
         config.access_token        = user.token
         config.access_token_secret = user.oauth_secret
     end
-    client.update("My Marvelus Superhero match is #{superhero.name}!\nhttp://marvel-us.herokuapp.com/")
+    client.update("My Marvelus Superhero match is #{superhero.name}! Who's yours?\nhttp://marvel-us.herokuapp.com/")
   end
 
 end
