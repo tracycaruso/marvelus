@@ -16,9 +16,11 @@ class User < ActiveRecord::Base
     user.nickname = auth.info.nickname
     user.image_url = auth.info.image
     user.token = auth.credentials.token
+    user.oauth_secret = auth.credentials.secret
     user.save
     user
   end
+
 
   def tweet_text
     User.twitter_service.collect_tweets(self.nickname)
@@ -37,7 +39,7 @@ class User < ActiveRecord::Base
       if counter >= 3
         { confidence: 0 }
       else
-        retry 
+        retry
       end
     end
   end

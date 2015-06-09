@@ -6,7 +6,11 @@ Rails.application.routes.draw do
   delete "logout", to: 'sessions#destroy'
   
   resource :user
+
+  post "tweet", to: 'users#tweet'
+
   # get "/users", to: 'users#show'
   resources :superheros
+
 
 end
