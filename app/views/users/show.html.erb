@@ -7,7 +7,7 @@
            <%= link_to image_tag(@superhero.image), superhero_path(@superhero) %>
         </div>
           <h3><%= @superhero.name %></h3>
-          <h3><%= @superhero.sentiment_score %></h3>
+          <h3>Score: <%= @superhero.sentiment_score %></h3>
         </div>
 
       <div class="back">
@@ -15,6 +15,7 @@
           <h3><%= @superhero.name %></h3>
           <p><%= @superhero.deck %></p>
           <h3><%= link_to image_tag("tweet_button.png", :class => 'tweet_icon'), tweet_path, method: :post %></h3>
+          <h3>Tweet Your Superhero Match!</h3>
         </div>
       </div>
   	</div>
@@ -32,8 +33,50 @@
           <%= link_to image_tag(hero.image), superhero_path(hero), class: "custom-thumbnail-class img=small" %>
         </div>
         <h3> <%= hero.name %> </h3>
-        <h3> Score: <%= hero.sentiment_score %> </h3> 
+        <h3> Score: <%= hero.sentiment_score %> </h3>
       </div>
     <% end %>
   </div>
+
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title>superhero type </title>
+    <meta charset="utf-8">
+
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,200italic,600italic&subset=latin,vietnamese' rel='stylesheet' type='text/css'>
+
+    <script src="http://phuonghuynh.github.io/js/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="http://phuonghuynh.github.io/js/bower_components/d3/d3.min.js"></script>
+    <script src="http://phuonghuynh.github.io/js/bower_components/d3-transform/src/d3-transform.js"></script>
+    <script src="http://phuonghuynh.github.io/js/bower_components/cafej/src/extarray.js"></script>
+    <script src="http://phuonghuynh.github.io/js/bower_components/cafej/src/misc.js"></script>
+    <script src="http://phuonghuynh.github.io/js/bower_components/cafej/src/micro-observer.js"></script>
+    <script src="http://phuonghuynh.github.io/js/bower_components/microplugin/src/microplugin.js"></script>
+    <script src="http://phuonghuynh.github.io/js/bower_components/bubble-chart/src/bubble-chart.js"></script>
+    <script src="http://phuonghuynh.github.io/js/bower_components/bubble-chart/src/plugins/central-click/central-click.js"></script>
+    <script src="http://phuonghuynh.github.io/js/bower_components/bubble-chart/src/plugins/lines/lines.js"></script>
+    <script src="index.js"></script>
+    <style>
+      .bubbleChart {
+        min-width: 500px;
+        max-width: 500px;
+        height: 500px;
+        margin: 0 auto;
+      }
+
+      .bubbleChart svg{
+        background: #000000;
+        border:5px solid #FFFFFF;
+      }
+    </style>
+  </head>
+  <body style="background: #000000">
+    <div class="row">
+    <div class="large-6 columns">
+      <div class="bubbleChart d3"></div>
+    </div>
+  </div>
+  </body>
+  </html>
 </div>

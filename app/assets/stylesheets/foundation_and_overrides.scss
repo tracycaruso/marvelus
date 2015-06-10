@@ -60,7 +60,6 @@
 $include-html-classes: true;
 $include-html-global-classes: $include-html-classes;
 
-
 @import 'foundation';
 @import url(http://fonts.googleapis.com/css?family=Oswald:400,300);
 @font-face {
@@ -128,6 +127,10 @@ h6{
 
 .deck{
   font-size:18px;
+
+  h3 {
+  text-align:left;
+  }
 }
 
 img {
@@ -188,11 +191,20 @@ p{font-family: 'Oswald', sans-serif;}
 .searchbox{
   padding-bottom:50px;
 }
+
 h3 {
   font-family: "sf_slapstick_comicregular";
   text-align: center;
   font-size: 1.5rem;
 }
+
+h4.super-info {
+  font-family: "sf_slapstick_comicregular";
+  text-align: left;
+
+}
+
+
 
 .superheros .large-4{
   margin-top:30px;
@@ -273,8 +285,6 @@ perspective: 1000;
   transform: rotateY(180deg);
 }
 
-
-
 /* flip speed goes here */
 .flipper {
 transition: 0.9s;
@@ -348,8 +358,8 @@ transform: rotateY(180deg);
 }
 
 .tweet_icon {
-  height:30%;
-  width: 30%;
+  height:50%;
+  width: 50%;
   margin-left:-10px;
   border:5px solid #000;
 }
@@ -413,4 +423,23 @@ transform: rotateY(180deg);
   }
 }
 
+.pagination {
+  font-size: 1.5rem;
+  text-align: center;
+  color: red;
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: .1rem;
 
+    a:hover {
+      color: red;
+    }
+  }
+
+.pagination a {
+  color: black;
+}
+
+.d3 {
+  padding-top: 350px;
+  padding-right:400px;
+}

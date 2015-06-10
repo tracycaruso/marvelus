@@ -6,6 +6,9 @@
   <br/>
     <h1> <%= @superhero.name %> </h1>
     <p class="deck"> <%= @superhero.deck %> </p>
-    <%= display_present_attribute("Birthday", @superhero.birthday) %>
-    <%= display_present_attribute("Publisher", @superhero.publisher) %>
+    <h4 class="super-info"> <%= display_present_attribute("Real Name", @superhero.real_name) %></h4>
+    <h4 class="super-info"><%= display_present_attribute("Birthday", @superhero.birthday) %> </h4>
+    <h4 class="super-info"><%= display_present_attribute("Score", @superhero.sentiment_score.to_s) %> </h4>
+    <h4 class="super-info"><%= display_present_attribute("Publisher", @superhero.publisher) %></h4><br>
+    <%= link_to "Back", :back %>
   </div>
