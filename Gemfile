@@ -39,6 +39,7 @@ group :test do
   gem 'database_cleaner'
   gem 'pry-rails'
   gem 'rspec-rails'
+  gem 'simplecov', :require => false
 end
 
 group :production do
