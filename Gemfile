@@ -15,6 +15,8 @@ gem 'figaro'
 gem 'rails-html-sanitizer'
 gem 'twitter'
 gem 'alchemy-api-rb', :require => 'alchemy_api'
+gem 'will_paginate', '~> 3.0.7'
+gem 'will_paginate-foundation'
 gem "skylight"
 
 group :development, :test do
