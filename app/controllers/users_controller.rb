@@ -9,11 +9,6 @@ class UsersController < ApplicationController
     else
       redirect_to "/auth/twitter"
     end
-
-    respond_to do |format|
-      format.html {}
-      format.json {render :file => "users.js"}
-    end
   end
 
   def tweet
