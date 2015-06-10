@@ -60,7 +60,6 @@
 $include-html-classes: true;
 $include-html-global-classes: $include-html-classes;
 
-
 @import 'foundation';
 @import url(http://fonts.googleapis.com/css?family=Oswald:400,300);
 @font-face {
@@ -273,8 +272,6 @@ perspective: 1000;
   transform: rotateY(180deg);
 }
 
-
-
 /* flip speed goes here */
 .flipper {
 transition: 0.9s;
@@ -413,4 +410,18 @@ transform: rotateY(180deg);
   }
 }
 
+.pagination {
+  font-size: 1.5rem;
+  text-align: center;
+  color: red;
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: .1rem;
 
+    a:hover {
+      color: red;
+    }
+  }
+
+.pagination a {
+  color: black;
+}
