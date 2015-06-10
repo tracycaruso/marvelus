@@ -127,6 +127,10 @@ h6{
 
 .deck{
   font-size:18px;
+
+  h3 {
+  text-align:left;
+  }
 }
 
 img {
@@ -187,11 +191,20 @@ p{font-family: 'Oswald', sans-serif;}
 .searchbox{
   padding-bottom:50px;
 }
+
 h3 {
   font-family: "sf_slapstick_comicregular";
   text-align: center;
   font-size: 1.5rem;
 }
+
+h4.super-info {
+  font-family: "sf_slapstick_comicregular";
+  text-align: left;
+
+}
+
+
 
 .superheros .large-4{
   margin-top:30px;
