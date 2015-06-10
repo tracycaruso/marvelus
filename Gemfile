@@ -19,6 +19,7 @@ gem 'will_paginate', '~> 3.0.7'
 gem 'will_paginate-foundation'
 gem "skylight"
 gem "d3-rails"
+gem "sidekiq"
 
 group :development, :test do
   gem 'byebug'
