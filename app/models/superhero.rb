@@ -13,6 +13,51 @@ class Superhero < ActiveRecord::Base
 
   scope :ordered_score, -> { Superhero.order(:sentiment_score) }
 
+  def self.categorized_scores
+    @categorized_scores ||= Superhero.formatted_categorized_scores
+  end
+
+  def self.formatted_categorized_scores
+    categorized_scores = {}
+    categorized_scores[:chaotic_evil] = Superhero.chaotic_evil
+    categorized_scores[:lawful_evil] = lawful_evil
+    categorized_scores[:chaotic_good] = chaotic_good
+    categorized_scores[:lawful_good] = lawful_good
+    {categorized_scores: categorized_scores}
+  end
+
+  def self.chaotic_evil
+    ce = {}
+    Superhero.ordered_score.where("sentiment_score <= ?", -50).pluck(:name, :sentiment_score).each do |p|
+      ce[p.first] = p.last
+    end
+    ce
+  end
+
+  def self.lawful_evil
+    le = {}
+    Superhero.ordered_score.where("sentiment_score < ? AND sentiment_score > ?", 0, -50).pluck(:name, :sentiment_score).each do |p|
+      le[p.first] = p.last
+    end
+    le
+  end
+
+  def self.chaotic_good
+    cg = {}
+    Superhero.ordered_score.where("sentiment_score < ? AND sentiment_score >= ?", 50, 0).pluck(:name, :sentiment_score).each do |p|
+      cg[p.first] = p.last
+    end
+    cg
+  end
+
+  def self.lawful_good
+    lg = {}
+    Superhero.ordered_score.where("sentiment_score >= ?", 50).pluck(:name, :sentiment_score).each do |p|
+      lg[p.first] = p.last
+    end
+    lg
+  end
+
   def self.create_superheros
     SUPER_IDS.each do |id|
       access(id)
@@ -41,7 +86,7 @@ class Superhero < ActiveRecord::Base
       if counter >= 3
         { confidence: 0 }
       else
-        retry 
+        retry
       end
     end
   end
