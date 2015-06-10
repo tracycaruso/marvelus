@@ -1,4 +1,4 @@
-xz
+
 <div class="row search-box">
   <div class="large-12 columns">
     <%= image_tag("searchheros.png", class: "search") %>
@@ -6,16 +6,17 @@ xz
   </div>
 </div>
 
-<div>
+<div class="row">
   <button id="female">Sheros</button>
   <button id="male">Heroes</button>
+  <button id="all">All</button>
 </div>
 
-<div class="row main superheros">
+<div class="row main superheros", id: "super-section">
 <div><%= will_paginate @superheros %></div>  
   <% @superheros.each do |superhero| %>
-  <div class="large-4 columns superheros2">
-  <div class="img-container filtered-heros">
+  <div class="large-4 columns superheros2 <%=superhero.gender%>">
+  <div class="img-container filtered-heroes">
     <%= link_to image_tag(superhero.image), superhero_path(superhero) %>
   </div>
     <h3> <%= superhero.name %> </h3>

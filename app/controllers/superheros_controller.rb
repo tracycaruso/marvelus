@@ -1,8 +1,10 @@
 class SuperherosController < ApplicationController
 
   def index
-    @superheros = Superhero.paginate(page: params[:page], per_page: 6)
-    # @superheros = Superhero.order("RANDOM()").paginate(page: params[:page], per_page: 6)
+    @superheros = Superhero.all
+    # @superheros = Superhero.paginate(page: params[:page], per_page: 6)
+    @females    = Superhero.female
+    @males      = Superhero.male
   end
 
   def show
