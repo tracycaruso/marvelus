@@ -9,8 +9,6 @@ Rails.application.routes.draw do
 
   post "tweet", to: 'users#tweet'
 
-  # get "/users", to: 'users#show'
-  resources :superheros
-
-
+  get "/superheroes", to: 'superheros#index'
+  resources :superheros, only: [:show]
 end
