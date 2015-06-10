@@ -18,6 +18,7 @@ gem 'alchemy-api-rb', :require => 'alchemy_api'
 gem 'will_paginate', '~> 3.0.7'
 gem 'will_paginate-foundation'
 gem "skylight"
+gem "d3-rails"
 
 group :development, :test do
   gem 'byebug'
