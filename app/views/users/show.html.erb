@@ -15,6 +15,7 @@
           <h3><%= @superhero.name %></h3>
           <p><%= @superhero.deck %></p>
           <h3><%= link_to image_tag("tweet_button.png", :class => 'tweet_icon'), tweet_path, method: :post %></h3>
+          <h3>Tweet Your Superhero Match!</h3>
         </div>
       </div>
   	</div>
@@ -32,7 +33,7 @@
           <%= link_to image_tag(hero.image), superhero_path(hero), class: "custom-thumbnail-class img=small" %>
         </div>
         <h3> <%= hero.name %> </h3>
-        <h3> Score: <%= hero.sentiment_score %> </h3> 
+        <h3> Score: <%= hero.sentiment_score %> </h3>
       </div>
     <% end %>
   </div>
