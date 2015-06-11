@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "logged in user" do
+RSpec.describe "logged in user can" do
   before(:each) do
     OmniAuth.config.mock_auth[:twitter] = nil
   end
@@ -17,11 +17,13 @@ RSpec.describe "logged in user" do
   end
 
 
-  it "can login with Twitter", vcr: true do
+  it "cannot post to Twitter without users secret ouath", vcr: true do
     create_superheros
     visit '/'
     mock_omniauth_user
     click_link "Login with Twitter"
+    expect(page).to have_content("Hey hearmemihir, Our spidey senses tell us that you are most like fish!")
+    find('img.tweet_icon').click
     expect(page).to have_content("Hey hearmemihir, Our spidey senses tell us that you are most like fish!")
   end
 end
