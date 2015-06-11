@@ -17,13 +17,13 @@ RSpec.describe "logged in user can" do
   end
 
 
-  it "can post to Twitter", vcr: true do
+  it "cannot post to Twitter without users secret ouath", vcr: true do
     create_superheros
     visit '/'
     mock_omniauth_user
     click_link "Login with Twitter"
     expect(page).to have_content("Hey hearmemihir, Our spidey senses tell us that you are most like fish!")
     find('img.tweet_icon').click
-    expect(page).to have_content("Real Name")
+    expect(page).to have_content("Hey hearmemihir, Our spidey senses tell us that you are most like fish!")
   end
 end
