@@ -475,7 +475,6 @@ transform: rotateY(180deg);
 }
 
 
-
 a.click-me{
   margin:11px 0px 0px 18px;
   background-image: asset-url("clickhere.png");
@@ -502,7 +501,6 @@ a.homelinks:hover{
 }
 
 
-
 .sort-button{
   margin-top:30px;
 }
@@ -524,4 +522,12 @@ a.analyze-me{
 
 a.analyze-me:hover{
   background-image: asset-url("analyze-me-hover.png");
+}
+
+.center {
+  text-align: center;
+
+  h1{
+    margin:20px;
+  }
 }
