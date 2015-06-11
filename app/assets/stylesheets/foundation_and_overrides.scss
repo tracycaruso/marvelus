@@ -181,6 +181,10 @@ p{font-family: 'Oswald', sans-serif;}
   display: block;
 }
 
+#super-section {
+  display: none;
+}
+
 .searchbox{
   width: 75%;
 }
@@ -437,6 +441,26 @@ transform: rotateY(180deg);
 
 .pagination a {
   color: black;
+}
+
+.sort-button {
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: .1rem;
+  word-spacing: 10px;
+
+  a {
+    color: black;
+  }
+
+    a:hover {
+      color: red;
+    }
+}
+
+.cushion {
+  margin: 20px;
 }
 
 .d3 {
