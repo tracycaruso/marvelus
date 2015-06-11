@@ -1,6 +1,6 @@
 class Superhero < ActiveRecord::Base
-  validates :name, uniqueness: true
-  validates :comic_vine_id, uniqueness: true
+  validates :name, presence: true, uniqueness: true
+  validates :comic_vine_id, presence: true, uniqueness: true
   enum       gender: { male: "1", female: "2" }
 
   SUPER_IDS = ['1699','1440','2114','1441','1295','1420','1445','1457','1462','1320',
