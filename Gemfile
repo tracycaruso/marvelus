@@ -18,6 +18,8 @@ gem 'alchemy-api-rb', :require => 'alchemy_api'
 gem 'will_paginate', '~> 3.0.7'
 gem 'will_paginate-foundation'
 gem "skylight"
+gem "d3-rails"
+gem "sidekiq"
 
 group :development, :test do
   gem 'byebug'
@@ -37,6 +39,7 @@ group :test do
   gem 'database_cleaner'
   gem 'pry-rails'
   gem 'rspec-rails'
+  gem 'simplecov', :require => false
 end
 
 group :production do

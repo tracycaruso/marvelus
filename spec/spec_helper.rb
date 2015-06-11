@@ -1,10 +1,16 @@
 require 'webmock/rspec'
+require 'simplecov'
+
 
 RSpec.configure do |config|
 
   config.before(:each) do
     DatabaseCleaner.strategy = :transaction
     DatabaseCleaner.clean_with(:truncation)
+  end
+
+  config.before(:each) do
+    SimpleCov.start
   end
 
   config.around(:each) do |example|
@@ -82,4 +88,3 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
   end
-
