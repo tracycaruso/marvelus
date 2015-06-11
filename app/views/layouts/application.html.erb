@@ -16,11 +16,11 @@
   <body>
 
     <div class="row main-nav">
-      <div class="large-1 columns">
-        <div class="logo"><%=link_to image_tag("logo.png"), '/' %></div>
+      <div class="large-3 columns">
+        <div class="logo"><%=link_to image_tag("logo.png"), root_path %></div>
       </div>
-      <div class="large-11 columns">
-    
+      <div class="large-9 columns">
+
       <%= render 'layouts/navbar' %>
 
       </div>
@@ -29,7 +29,9 @@
     <%= yield %>
 
     <footer class="row center">
+    <% if current_page?('/') %>
       <p> Data Courtesy of: <%= link_to ' Comic Vine', 'http://www.comicvine.com' %> </p> 
+      <% end %>
 
 
     </footer>
