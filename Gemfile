@@ -35,7 +35,6 @@ group :test do
   gem 'webmock'
   gem 'vcr'
   gem 'launchy'
-  gem 'simplecov'
   gem 'database_cleaner'
   gem 'pry-rails'
   gem 'rspec-rails'
