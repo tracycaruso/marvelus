@@ -441,5 +441,17 @@ transform: rotateY(180deg);
 
 .d3 {
   padding-top: 350px;
-  padding-right:400px;
+  padding-right:0px;
+}
+
+.bubbleChart {
+  min-width: 550px;
+  max-width: 550px;
+  height: 550px;
+  margin: 0 auto;
+}
+
+.bubbleChart svg{
+  background: #000000;
+  border:5px solid #FFFFFF;
 }
