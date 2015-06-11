@@ -443,3 +443,22 @@ transform: rotateY(180deg);
   color: black;
 }
 
+.sort-button {
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: .1rem;
+  word-spacing: 10px;
+
+  a {
+    color: black;
+  }
+
+    a:hover {
+      color: red;
+    }
+}
+
+.cushion {
+  margin: 20px;
+}
